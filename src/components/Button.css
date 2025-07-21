@@ -1,0 +1,115 @@
+/* button.css */
+.button {
+  position: relative;
+  padding: 16px 32px;
+  border-radius: 16px; /* Slightly rounded but not overly soft */
+  background: linear-gradient(45deg, #6a4c9c, #2d2b65, #43477a);
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  text-transform: uppercase;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  box-shadow: 0 0 30px rgba(255, 255, 255, 0.8);
+  overflow: hidden;
+  transition: all 0.3s ease-in-out;
+  font-family: 'Roboto', sans-serif;
+  z-index: 1;
+  position: relative;
+}
+
+.button::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 200%;
+  height: 200%;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  animation: cosmic-pulse 2.5s ease-in-out infinite;
+}
+
+.button .star {
+  position: absolute;
+  border-radius: 50%;
+  background: white;
+  opacity: 0;
+  animation: star-twinkling 3s infinite;
+}
+
+.button .star-1 {
+  width: 4px;
+  height: 4px;
+  top: 20%;
+  left: 30%;
+  animation-duration: 2.5s;
+}
+
+.button .star-2 {
+  width: 6px;
+  height: 6px;
+  top: 40%;
+  left: 50%;
+  animation-duration: 3s;
+}
+
+.button .star-3 {
+  width: 5px;
+  height: 5px;
+  top: 60%;
+  left: 70%;
+  animation-duration: 2.8s;
+}
+
+.button .star-4 {
+  width: 8px;
+  height: 8px;
+  top: 70%;
+  left: 80%;
+  animation-duration: 3.2s;
+}
+
+.button:hover {
+  background-position: 100% 100%;
+  box-shadow: 0 0 60px rgba(255, 255, 255, 1);
+  transform: scale(1.05);
+}
+
+.button:active {
+  transform: scale(0.98);
+}
+
+/* Cosmic Pulse Animation */
+@keyframes cosmic-pulse {
+  0% {
+    transform: scale(1);
+    opacity: 0.4;
+  }
+  50% {
+    transform: scale(1.4);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0.4;
+  }
+}
+
+/* Star Twinkling Animation */
+@keyframes star-twinkling {
+  0% {
+    opacity: 0;
+    transform: scale(0);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0);
+  }
+}
